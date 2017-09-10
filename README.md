@@ -1,2 +1,1 @@
-# go-www.github.io
-go-www
+https://go-www.com
