@@ -5,24 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="www">
-		<meta name="description" content="web server">
+		<meta name="description" content="static web server">
 		<meta name="keywords" content="web, http, server">
 		<meta name="generator" content="Hugo 0.26" />
-		<title>Test &middot; www</title>
-        <link rel="apple-touch-icon" sizes="57x57" href="https://go-www.com/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="https://go-www.com/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="https://go-www.com/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="https://go-www.com/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="https://go-www.com/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="https://go-www.com/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="https://go-www.com/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="https://go-www.com/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://go-www.com/images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="https://go-www.com/images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://go-www.com/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="https://go-www.com/images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://go-www.com/images/favicon-16x16.png">
-		<link rel="shortcut icon" href="https://go-www.com/images/favicon.ico">
+		<title>How It Works &middot; www</title>
 		<link rel="stylesheet" href="https://go-www.com/css/style.css">
 		<link rel="stylesheet" href="https://go-www.com/css/highlight.css">
 		
@@ -57,21 +43,74 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Test</h1>
+                    <h1>How It Works</h1>
                     <h2 class="headline">
                     <br>
+                    
+                    
+                        
+                            <a href="https://go-www.com/tags/www">www</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>By typing <code>www</code> will start a web server on port <code>8000</code> by default and use as document root
+the directory where the command was call</p>
+
+<pre><code>$ www
+</code></pre>
+
+<p>A different <strong>document root</strong> may be specified by using the <code>-r</code> option, for example:</p>
+
+<pre><code>$ www -r /tmp
+</code></pre>
+
+<p>By default <code>www</code> listen on port 8000, this can be changed by using the <code>-p</code> option:</p>
+
+<pre><code>$ www -p 80
+</code></pre>
+
+<blockquote>
+<p>may need root privileges</p>
+</blockquote>
+
+<p>IF TLS is required use the option <code>-s</code> and a domain name, for example:</p>
+
+<pre><code>$ www -s example.com
+</code></pre>
+
+<p>This will try to get a valid certificate by using letsencrypt but the port will
+always be <code>443</code></p>
+
+<p>In case need to create a self-signed certificate and use a different port, use
+the <code>localhost</code> as the domain:</p>
+
+<pre><code>$ www -s localhost -r /tmp -p 8080
+</code></pre>
+
+<p>Type <code>www -h</code> for see all options:</p>
+
+<pre><code>Usage of ./www:
+  -p port
+        Listen on port (default 8000)
+  -q quiet
+        quiet mode
+  -r root
+        Document root path (default &quot;.&quot;)
+  -s your-domain.tld
+        https://your-domain.tld if &quot;localhost&quot;, port can be other than 443
+  -v    Print version: 1.1.0
+</code></pre>
+
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
                 
                     
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2ftest%2f - Test "><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2fhow-it-works%2f - How%20It%20Works "><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -92,7 +131,7 @@
     
         
         <li>
-            <a href="https://go-www.com/post/test/">Test</a>
+            <a href="https://go-www.com/post/how-it-works/">How It Works</a>
         </li>
         
    
@@ -110,6 +149,13 @@
         
         <li>
             <a href="https://go-www.com/tags/">Tags</a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://go-www.com/tags/www/">Www</a>
         </li>
         
    

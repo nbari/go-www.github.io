@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>www</title>
-    <link>https://go-www.com/</link>
-    <description>Recent content on www</description>
+    <title>Www on www</title>
+    <link>https://go-www.com/tags/www/</link>
+    <description>Recent content in Www on www</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
     <lastBuildDate>Mon, 11 Sep 2017 21:36:00 +0200</lastBuildDate>
     
-	<atom:link href="https://go-www.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://go-www.com/tags/www/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,20 +22,6 @@
 $ www  A different document root may be specified by using the -r option, for example:
 $ www -r /tmp  By default www listen on port 8000, this can be changed by using the -p option:
 $ www -p 80   may need root privileges</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://go-www.com/about/</link>
-      <pubDate>Sun, 10 Sep 2017 13:09:04 +0200</pubDate>
-      
-      <guid>https://go-www.com/about/</guid>
-      <description> What it is www?
-A web server that serves only static content, it can send traffic in plain HTTP, or HTTPS by using a self signed certificate localhost or using a valid certificate by using letsencrypt.
-Why ? Because of the need to share, test via HTTP/HTTPS the contents of a directory.
-The idea came from the need to simplify this commands:
-python -m SimpleHTTPServer  or
-twistd -n web --path /foo/bar/baz  </description>
     </item>
     
   </channel>

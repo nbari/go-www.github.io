@@ -5,24 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="www">
-		<meta name="description" content="web server">
+		<meta name="description" content="static web server">
 		<meta name="keywords" content="web, http, server">
 		<meta name="generator" content="Hugo 0.26" />
 		<title>About &middot; www</title>
-        <link rel="apple-touch-icon" sizes="57x57" href="https://go-www.com/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="https://go-www.com/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="https://go-www.com/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="https://go-www.com/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="https://go-www.com/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="https://go-www.com/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="https://go-www.com/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="https://go-www.com/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://go-www.com/images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="https://go-www.com/images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://go-www.com/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="https://go-www.com/images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://go-www.com/images/favicon-16x16.png">
-		<link rel="shortcut icon" href="https://go-www.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://go-www.com/css/style.css">
 		<link rel="stylesheet" href="https://go-www.com/css/highlight.css">
 		
@@ -60,7 +46,27 @@
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>www</p>
+                    
+
+<p>What it is www?</p>
+
+<p>A web server that serves only static content, it can send traffic in plain
+HTTP, or HTTPS by using a self signed certificate <code>localhost</code> or using a valid
+certificate by using <a href="https://letsencrypt.org/">letsencrypt</a>.</p>
+
+<h1 id="why">Why ?</h1>
+
+<p>Because of the need to share, test via HTTP/HTTPS the contents of a directory.</p>
+
+<p>The idea came from the need to simplify this commands:</p>
+
+<pre><code>python -m SimpleHTTPServer
+</code></pre>
+
+<p>or</p>
+
+<pre><code>twistd -n web --path /foo/bar/baz
+</code></pre>
 
                 </section>
             </article>
@@ -89,7 +95,7 @@
     
         
         <li>
-            <a href="https://go-www.com/post/test/">Test</a>
+            <a href="https://go-www.com/post/how-it-works/">How It Works</a>
         </li>
         
    
@@ -107,6 +113,13 @@
         
         <li>
             <a href="https://go-www.com/tags/">Tags</a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://go-www.com/tags/www/">Www</a>
         </li>
         
    
