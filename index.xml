@@ -30,8 +30,7 @@ $ www -p 80   may need root privileges</description>
       <pubDate>Sun, 10 Sep 2017 13:09:04 +0200</pubDate>
       
       <guid>https://go-www.com/about/</guid>
-      <description> What it is www?
-A web server that serves only static content, it can send traffic in plain HTTP, or HTTPS by using a self signed certificate localhost or using a valid certificate by using letsencrypt.
+      <description> What it is www? A web server that serves only static content, it can send traffic in plain HTTP, or HTTPS by using a self signed certificate localhost or using a valid certificate by using letsencrypt.
 Why ? Because of the need to share, test via HTTP/HTTPS the contents of a directory.
 The idea came from the need to simplify this commands:
 python -m SimpleHTTPServer  or
