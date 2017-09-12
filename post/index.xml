@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 21:36:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 12 Sep 2017 10:17:49 +0200</lastBuildDate>
     
 	<atom:link href="https://go-www.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Letsencrypt</title>
+      <link>https://go-www.com/post/letsencrypt/</link>
+      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
+      
+      <guid>https://go-www.com/post/letsencrypt/</guid>
+      <description>Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates Just type:
+www -s your-domain.tld  That&amp;rsquo;s all
+Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
+    </item>
     
     <item>
       <title>How It Works</title>

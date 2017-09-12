@@ -8,7 +8,7 @@
 		<meta name="description" content="static web server">
 		<meta name="keywords" content="web, http, server, letsencrypt, SSL, TLS, free certificates">
 		<meta name="generator" content="Hugo 0.27" />
-		<title>How It Works &middot; www</title>
+		<title>Letsencrypt &middot; www</title>
 		<link rel="stylesheet" href="https://go-www.com/css/style.css">
 		<link rel="stylesheet" href="https://go-www.com/css/highlight.css">
 		
@@ -43,70 +43,36 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>How It Works</h1>
+                    <h1>Letsencrypt</h1>
                     <h2 class="headline">
                     <br>
                     
                     
                         
-                            <a href="https://go-www.com/tags/www">www</a>
+                            <a href="https://go-www.com/tags/letsencrypt">letsencrypt</a>
+                        
+                            <a href="https://go-www.com/tags/tls">tls</a>
                         
                     
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>By typing <code>www</code> will start a web server on port <code>8000</code> by default and use as document root
-the directory where the command was call</p>
+                    
 
-<pre><code>$ www
+<h1 id="let-s-encrypt-free-ssl-tls-certificates">Let&rsquo;s Encrypt - Free SSL/TLS Certificates</h1>
+
+<p>Just type:</p>
+
+<pre><code>www -s your-domain.tld
 </code></pre>
 
-<p>A different <strong>document root</strong> may be specified by using the <code>-r</code> option, for example:</p>
+<p>That&rsquo;s all</p>
 
-<pre><code>$ www -r /tmp
-</code></pre>
+<h2 id="requirements">Requirements</h2>
 
-<p>By default <code>www</code> listen on port 8000, this can be changed by using the <code>-p</code> option:</p>
-
-<pre><code>$ www -p 80
-</code></pre>
-
-<blockquote>
-<p>may need root privileges</p>
-</blockquote>
-
-<p>If TLS is required use the option <code>-s</code> and a domain name, for example:</p>
-
-<pre><code>$ www -s example.com
-</code></pre>
-
-<p>This will try to get a valid certificate by using letsencrypt but the port will
-always be <code>443</code></p>
-
-<p>In case need to create a self-signed certificate and use a different port, use
-the <code>localhost</code> as the domain:</p>
-
-<pre><code>$ www -s localhost -r /tmp -p 8080
-</code></pre>
-
-<blockquote>
-<p>when using the <code>-s</code> use <code>https</code> option on the browser</p>
-</blockquote>
-
-<p>Type <code>www -h</code> for see all options:</p>
-
-<pre><code>Usage of ./www:
-  -p port
-        Listen on port (default 8000)
-  -q quiet
-        quiet mode
-  -r root
-        Document root path (default &quot;.&quot;)
-  -s your-domain.tld
-        https://your-domain.tld if &quot;localhost&quot;, port can be other than 443
-  -v    Print version: 1.1.0
-</code></pre>
+<p>You will need a valid domain/subdomain pointing to a valid public
+IP, also port <code>443</code> needs to be open.</p>
 
                 </section>
             </article>
@@ -114,7 +80,7 @@ the <code>localhost</code> as the domain:</p>
                 
                     
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2fhow-it-works%2f - How%20It%20Works "><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2fletsencrypt%2f - Letsencrypt "><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tls on www</title>
+    <link>https://go-www.com/tags/tls/</link>
+    <description>Recent content in Tls on www</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> </copyright>
+    <lastBuildDate>Tue, 12 Sep 2017 10:17:49 +0200</lastBuildDate>
+    
+	<atom:link href="https://go-www.com/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Letsencrypt</title>
+      <link>https://go-www.com/post/letsencrypt/</link>
+      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
+      
+      <guid>https://go-www.com/post/letsencrypt/</guid>
+      <description>Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates Just type:
+www -s your-domain.tld  That&amp;rsquo;s all
+Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
+    </item>
+    
+  </channel>
+</rss>
