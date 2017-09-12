@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://go-www.com/post/letsencrypt/</loc>
+    <loc>https://go-www.com/post/how-it-works/</loc>
     <lastmod>2017-09-12T10:17:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://go-www.com/post/how-it-works/</loc>
+    <loc>https://go-www.com/post/letsencrypt/</loc>
     <lastmod>2017-09-11T21:36:00+02:00</lastmod>
   </url>
   
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://go-www.com/tags/letsencrypt/</loc>
-    <lastmod>2017-09-12T10:17:49+02:00</lastmod>
+    <lastmod>2017-09-11T21:36:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -31,19 +31,19 @@
   
   <url>
     <loc>https://go-www.com/tags/</loc>
-    <lastmod>2017-09-12T10:17:49+02:00</lastmod>
+    <lastmod>2017-09-11T21:36:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://go-www.com/tags/tls/</loc>
-    <lastmod>2017-09-12T10:17:49+02:00</lastmod>
+    <lastmod>2017-09-11T21:36:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://go-www.com/tags/www/</loc>
-    <lastmod>2017-09-11T21:36:00+02:00</lastmod>
+    <lastmod>2017-09-12T10:17:49+02:00</lastmod>
     <priority>0</priority>
   </url>
   

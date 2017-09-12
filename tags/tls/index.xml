@@ -7,19 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Tue, 12 Sep 2017 10:17:49 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 21:36:00 +0200</lastBuildDate>
     
 	<atom:link href="https://go-www.com/tags/tls/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Letsencrypt</title>
+      <title>Let&#39;s Encrypt - Free SSL/TLS Certificates</title>
       <link>https://go-www.com/post/letsencrypt/</link>
-      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
+      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
       
       <guid>https://go-www.com/post/letsencrypt/</guid>
-      <description>Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates Just type:
-www -s your-domain.tld  That&amp;rsquo;s all
+      <description>Just type:
+www -s your-domain.tld  If want to serve content from an specific directory:
+www -s your-domain.tld -r /tmp  That&amp;rsquo;s it :-).
 Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
     </item>
     

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Tue, 12 Sep 2017 10:17:49 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 21:36:00 +0200</lastBuildDate>
     
 	<atom:link href="https://go-www.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Letsencrypt</title>
       <link>https://go-www.com/tags/letsencrypt/</link>
-      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
+      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
       
       <guid>https://go-www.com/tags/letsencrypt/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Tls</title>
       <link>https://go-www.com/tags/tls/</link>
-      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
+      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
       
       <guid>https://go-www.com/tags/tls/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Www</title>
       <link>https://go-www.com/tags/www/</link>
-      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
+      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
       
       <guid>https://go-www.com/tags/www/</guid>
       <description></description>

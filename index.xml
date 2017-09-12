@@ -13,26 +13,27 @@
     
     
     <item>
-      <title>Letsencrypt</title>
-      <link>https://go-www.com/post/letsencrypt/</link>
-      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
-      
-      <guid>https://go-www.com/post/letsencrypt/</guid>
-      <description>Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates Just type:
-www -s your-domain.tld  That&amp;rsquo;s all
-Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
-    </item>
-    
-    <item>
       <title>How It Works</title>
       <link>https://go-www.com/post/how-it-works/</link>
-      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
+      <pubDate>Tue, 12 Sep 2017 10:17:49 +0200</pubDate>
       
       <guid>https://go-www.com/post/how-it-works/</guid>
       <description>By typing www will start a web server on port 8000 by default and use as document root the directory where the command was call
 $ www  A different document root may be specified by using the -r option, for example:
 $ www -r /tmp  By default www listen on port 8000, this can be changed by using the -p option:
 $ www -p 80   may need root privileges</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt - Free SSL/TLS Certificates</title>
+      <link>https://go-www.com/post/letsencrypt/</link>
+      <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
+      
+      <guid>https://go-www.com/post/letsencrypt/</guid>
+      <description>Just type:
+www -s your-domain.tld  If want to serve content from an specific directory:
+www -s your-domain.tld -r /tmp  That&amp;rsquo;s it :-).
+Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
     </item>
     
     <item>
