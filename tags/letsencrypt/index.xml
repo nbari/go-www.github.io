@@ -18,10 +18,13 @@
       <pubDate>Mon, 11 Sep 2017 21:36:00 +0200</pubDate>
       
       <guid>https://go-www.com/post/letsencrypt/</guid>
-      <description>Just type:
+      <description> Just type:
 www -s your-domain.tld  If want to serve content from an specific directory:
 www -s your-domain.tld -r /tmp  That&amp;rsquo;s it :-).
-Requirements You will need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.</description>
+Requirements You need a valid domain/subdomain pointing to a valid public IP, also port 443 needs to be open.
+Your DNS record may look like this:
+your-domain.tld IN A X.X.X.X   In where X.X.X.X is your public IP
+ </description>
     </item>
     
   </channel>

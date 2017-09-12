@@ -76,8 +76,18 @@
 
 <h2 id="requirements">Requirements</h2>
 
-<p>You will need a valid domain/subdomain pointing to a valid public
-IP, also port <code>443</code> needs to be open.</p>
+<p>You need a valid domain/subdomain pointing to a valid
+<a href="https://en.wikipedia.org/wiki/IP_address#Public_address">public IP</a>,
+also port <code>443</code> needs to be open.</p>
+
+<p>Your DNS record may look like this:</p>
+
+<pre><code class="language-nginx">your-domain.tld    IN    A   X.X.X.X
+</code></pre>
+
+<blockquote>
+<p>In where X.X.X.X  is your public IP</p>
+</blockquote>
 
                 </section>
             </article>
