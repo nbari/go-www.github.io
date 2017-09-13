@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autocert on www</title>
+    <link>https://go-www.com/tags/autocert/</link>
+    <description>Recent content in Autocert on www</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> </copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 21:35:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://go-www.com/tags/autocert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Errors</title>
+      <link>https://go-www.com/post/errors/</link>
+      <pubDate>Mon, 11 Sep 2017 21:35:00 +0200</pubDate>
+      
+      <guid>https://go-www.com/post/errors/</guid>
+      <description>When using option -s yourdomain.tld if you get errors similar to like:
+acme/autocert: certificate is not valid yet acme/autocert: missing server name  Besides checking that your domain is pointing to a proper valid IP, also check that your clock is in synchronised clock to the network,, for this you could use NTP</description>
+    </item>
+    
+  </channel>
+</rss>

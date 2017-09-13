@@ -39,5 +39,15 @@ your-domain.tld IN A X.X.X.X   In where X.X.X.X is your public IP
  </description>
     </item>
     
+    <item>
+      <title>Errors</title>
+      <link>https://go-www.com/post/errors/</link>
+      <pubDate>Mon, 11 Sep 2017 21:35:00 +0200</pubDate>
+      
+      <guid>https://go-www.com/post/errors/</guid>
+      <description>When using option -s yourdomain.tld if you get errors similar to like:
+acme/autocert: certificate is not valid yet acme/autocert: missing server name  Besides checking that your domain is pointing to a proper valid IP, also check that your clock is in synchronised clock to the network,, for this you could use NTP</description>
+    </item>
+    
   </channel>
 </rss>
