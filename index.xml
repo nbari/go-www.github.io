@@ -79,7 +79,7 @@ $ pkg install go-www  https://www.freshports.org/www/go-www</description>
       
       <guid>https://go-www.com/mac/</guid>
       <description>To install www on Mac OS X:
-$ brew tap nbari/www  Next:
+$ brew tap nbari/homebrew-www  Next:
 $ brew install www  </description>
     </item>
     
