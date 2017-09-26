@@ -537,9 +537,9 @@ table {
 
 th,
 td {
-    text-align: left;
+    text-align: center;
     padding-right: 20px;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 table td,

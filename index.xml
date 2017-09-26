@@ -62,5 +62,26 @@ python -m SimpleHTTPServer  or
 twistd -n web --path /foo/bar/baz  </description>
     </item>
     
+    <item>
+      <title>pkg install go-www</title>
+      <link>https://go-www.com/freebsd/</link>
+      <pubDate>Mon, 20 Mar 2017 16:17:00 +0000</pubDate>
+      
+      <guid>https://go-www.com/freebsd/</guid>
+      <description>To install www on FreeBSD:
+$ pkg install go-www  https://www.freshports.org/www/go-www</description>
+    </item>
+    
+    <item>
+      <title>homebrew</title>
+      <link>https://go-www.com/mac/</link>
+      <pubDate>Thu, 16 Mar 2017 22:54:37 +0100</pubDate>
+      
+      <guid>https://go-www.com/mac/</guid>
+      <description>To install www on Mac OS X:
+$ brew tap nbari/www  Next:
+$ brew install www  </description>
+    </item>
+    
   </channel>
 </rss>

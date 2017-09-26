@@ -23,6 +23,16 @@
   </url>
   
   <url>
+    <loc>https://go-www.com/freebsd/</loc>
+    <lastmod>2017-03-20T16:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://go-www.com/mac/</loc>
+    <lastmod>2017-03-16T22:54:37+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://go-www.com/tags/autocert/</loc>
     <lastmod>2017-09-11T21:35:00+02:00</lastmod>
     <priority>0</priority>
