@@ -8,7 +8,7 @@
 		<meta name="description" content="static web server">
 		<meta name="keywords" content="web, http, server, letsencrypt, SSL, TLS, free certificates">
 		<meta name="generator" content="Hugo 0.32.3" />
-		<title>Let&#39;s Encrypt - Free SSL/TLS Certificates &middot; www</title>
+		<title>The code &middot; www</title>
 		<link rel="stylesheet" href="https://go-www.com/css/style.css">
 		<link rel="stylesheet" href="https://go-www.com/css/highlight.css">
 		
@@ -47,51 +47,122 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Let&#39;s Encrypt - Free SSL/TLS Certificates</h1>
+                    <h1>The code</h1>
                     <h2 class="headline">
                     <br>
                     
                     
                         
-                            <a href="https://go-www.com/tags/letsencrypt">letsencrypt</a>
+                            <a href="https://go-www.com/tags/go">go</a>
                         
-                            <a href="https://go-www.com/tags/tls">tls</a>
-                        
-                            <a href="https://go-www.com/tags/ssl">ssl</a>
+                            <a href="https://go-www.com/tags/code">code</a>
                         
                     
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>The full code is close to 100 lines using packages from the standard library and
+the <a href="https://godoc.org/golang.org/x/crypto/acme/autocert">acme/autocert</a></p>
 
-<p>Just type:</p>
+<pre><code class="language-go">package main
 
-<pre><code>www -s your-domain.tld
+import (
+	&quot;bytes&quot;
+	&quot;crypto/rand&quot;
+	&quot;crypto/rsa&quot;
+	&quot;crypto/tls&quot;
+	&quot;crypto/x509&quot;
+	&quot;crypto/x509/pkix&quot;
+	&quot;encoding/pem&quot;
+	&quot;flag&quot;
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;math/big&quot;
+	&quot;net/http&quot;
+	&quot;time&quot;
+
+	&quot;golang.org/x/crypto/acme/autocert&quot;
+)
+
+type responseWriter struct {
+	http.ResponseWriter
+	statusCode int
+}
+
+func (w *responseWriter) WriteHeader(statusCode int) {
+	w.statusCode = statusCode
+	w.ResponseWriter.WriteHeader(statusCode)
+}
+
+func www(root string, quiet bool) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+		lw := &amp;responseWriter{w, http.StatusOK}
+		http.StripPrefix(&quot;/&quot;, http.FileServer(http.Dir(root))).ServeHTTP(lw, r)
+		if !quiet {
+			log.Printf(&quot;%s [%s] %d %s&quot;, r.RemoteAddr, r.URL, lw.statusCode, time.Since(start))
+		}
+	})
+}
+
+func createSSL() ([]byte, []byte, error) {
+	template := x509.Certificate{
+		SerialNumber: big.NewInt(time.Now().Unix()),
+		Subject:      pkix.Name{Organization: []string{&quot;localhost&quot;}},
+		NotBefore:    time.Now(),
+		NotAfter:     time.Now().AddDate(1, 0, 0),
+		KeyUsage:     x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
+		ExtKeyUsage:  []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
+		DNSNames:     []string{&quot;localhost&quot;},
+	}
+	privatekey, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		return nil, nil, err
+	}
+	crt, err := x509.CreateCertificate(rand.Reader, &amp;template, &amp;template, &amp;privatekey.PublicKey, privatekey)
+	if err != nil {
+		return nil, nil, err
+	}
+	var certOut, keyOut bytes.Buffer
+	pem.Encode(&amp;certOut, &amp;pem.Block{Type: &quot;CERTIFICATE&quot;, Bytes: crt})
+	pem.Encode(&amp;keyOut, &amp;pem.Block{Type: &quot;RSA PRIVATE KEY&quot;, Bytes: x509.MarshalPKCS1PrivateKey(privatekey)})
+	return certOut.Bytes(), keyOut.Bytes(), nil
+}
+
+func main() {
+	p := flag.Int(&quot;p&quot;, 8000, &quot;Listen on `port`&quot;)
+	q := flag.Bool(&quot;q&quot;, false, &quot;`quiet` mode&quot;)
+	r := flag.String(&quot;r&quot;, &quot;.&quot;, &quot;Document `root` path&quot;)
+	s := flag.String(&quot;s&quot;, &quot;&quot;, &quot;https://`your-domain.tld` if \&quot;localhost\&quot;, port can be other than 443&quot;)
+	flag.Parse()
+	srv := &amp;http.Server{Addr: fmt.Sprintf(&quot;:%d&quot;, *p), Handler: www(*r, *q)}
+	if *s == &quot;localhost&quot; {
+		certPEMBlock, keyPEMBlock, err := createSSL()
+		if err != nil {
+			log.Fatal(err)
+		}
+		srv.TLSConfig = &amp;tls.Config{Certificates: make([]tls.Certificate, 1)}
+		if srv.TLSConfig.Certificates[0], err = tls.X509KeyPair(certPEMBlock, keyPEMBlock); err != nil {
+			log.Fatal(err)
+		}
+	} else if *s != &quot;&quot; {
+		m := autocert.Manager{
+			Prompt:     autocert.AcceptTOS,
+			HostPolicy: autocert.HostWhitelist(*s),
+			Cache:      autocert.DirCache(&quot;/tmp/.certs&quot;)}
+		srv.Addr = &quot;:443&quot;
+		srv.TLSConfig = &amp;tls.Config{GetCertificate: m.GetCertificate}
+	}
+	if !*q {
+		log.Printf(&quot;Listening on *%s\n&quot;, srv.Addr)
+	}
+	if *s == &quot;&quot; {
+		log.Fatal(srv.ListenAndServe())
+	}
+	log.Fatal(srv.ListenAndServeTLS(&quot;&quot;, &quot;&quot;))
+}
 </code></pre>
-
-<p>If want to serve content from an specific directory:</p>
-
-<pre><code>www -s your-domain.tld -r /tmp
-</code></pre>
-
-<p>That&rsquo;s it :-).</p>
-
-<h2 id="requirements">Requirements</h2>
-
-<p>You need a valid domain/subdomain pointing to a valid
-<a href="https://en.wikipedia.org/wiki/IP_address#Public_address">public IP</a>,
-also port <code>443</code> needs to be open.</p>
-
-<p>Your DNS record may look like this:</p>
-
-<pre><code class="language-nginx">your-domain.tld    IN    A   X.X.X.X
-</code></pre>
-
-<blockquote>
-<p>In where X.X.X.X  is your public IP</p>
-</blockquote>
 
                 </section>
             </article>
@@ -99,7 +170,7 @@ also port <code>443</code> needs to be open.</p>
                 
                     
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2fletsencrypt%2f - Let%27s%20Encrypt%20-%20Free%20SSL%2fTLS%20Certificates "><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgo-www.com%2fpost%2fthe-code%2f - The%20code "><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
