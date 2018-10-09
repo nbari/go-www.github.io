@@ -72,6 +72,21 @@ twistd -n web --path /foo/bar/baz  </description>
     </item>
     
     <item>
+      <title>compile from source</title>
+      <link>https://go-www.com/linux/</link>
+      <pubDate>Mon, 20 Mar 2017 16:17:00 +0000</pubDate>
+      
+      <guid>https://go-www.com/linux/</guid>
+      <description>pre-compiled (Linux) Using https://packagecloud.io/nbari/www
+For rpm:
+curl -s https://packagecloud.io/install/repositories/nbari/www/script.rpm.sh | sudo bash   
+For deb:
+curl -s https://packagecloud.io/install/repositories/nbari/www/script.deb.sh | sudo bash   
+Download binary linux amd64: https://dl.bintray.com/nbari/www/www_1.1.2_linux_amd64.tar.gz
+See more: https://bintray.com/nbari/www/www/1.1.2</description>
+    </item>
+    
+    <item>
       <title>pkg install go-www</title>
       <link>https://go-www.com/freebsd/</link>
       <pubDate>Mon, 20 Mar 2017 16:17:00 +0000</pubDate>

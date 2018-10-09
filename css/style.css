@@ -571,7 +571,7 @@ th {
     white-space: nowrap;
 }
 
-img.badge {
+figure.badge img, img.badge {
     width: auto !important;
 }
 
