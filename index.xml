@@ -83,7 +83,8 @@ curl -s https://packagecloud.io/install/repositories/nbari/www/script.deb.sh | s
 Then:
 apt install www  For rpm:
 curl -s https://packagecloud.io/install/repositories/nbari/www/script.rpm.sh | sudo bash   
-Download binary linux amd64: https://dl.bintray.com/nbari/www/www_1.1.2_linux_amd64.tar.gz
+Then:
+yum install www  Download binary linux amd64: https://dl.bintray.com/nbari/www/www_1.1.2_linux_amd64.tar.gz
 See more: https://bintray.com/nbari/www/www/1.1.2</description>
     </item>
     
