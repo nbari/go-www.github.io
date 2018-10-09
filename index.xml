@@ -81,7 +81,7 @@ twistd -n web --path /foo/bar/baz  </description>
 For deb:
 curl -s https://packagecloud.io/install/repositories/nbari/www/script.deb.sh | sudo bash   
 Then:
-# apt install www  For rpm:
+apt install www  For rpm:
 curl -s https://packagecloud.io/install/repositories/nbari/www/script.rpm.sh | sudo bash   
 Download binary linux amd64: https://dl.bintray.com/nbari/www/www_1.1.2_linux_amd64.tar.gz
 See more: https://bintray.com/nbari/www/www/1.1.2</description>
