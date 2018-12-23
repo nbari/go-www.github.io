@@ -65,12 +65,13 @@
                     <p>The full code is close to 100 lines using packages from the standard library and
 the <a href="https://godoc.org/golang.org/x/crypto/acme/autocert">acme/autocert</a></p>
 
-<pre><code class="language-go">package main
+<pre><code class="language-go">
+package main
 
 import (
-	&quot;bytes&quot;
+	&quot;crypto/ecdsa&quot;
+	&quot;crypto/elliptic&quot;
 	&quot;crypto/rand&quot;
-	&quot;crypto/rsa&quot;
 	&quot;crypto/tls&quot;
 	&quot;crypto/x509&quot;
 	&quot;crypto/x509/pkix&quot;
@@ -109,32 +110,32 @@ func www(root string, quiet bool) http.Handler {
 func createSSL() ([]byte, []byte, error) {
 	template := x509.Certificate{
 		SerialNumber: big.NewInt(time.Now().Unix()),
-		Subject:      pkix.Name{Organization: []string{&quot;localhost&quot;}},
+		Subject:      pkix.Name{Organization: []string{&quot;www&quot;}},
 		NotBefore:    time.Now(),
 		NotAfter:     time.Now().AddDate(1, 0, 0),
 		KeyUsage:     x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
 		ExtKeyUsage:  []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
-		DNSNames:     []string{&quot;localhost&quot;},
 	}
-	privatekey, err := rsa.GenerateKey(rand.Reader, 2048)
+	privateKey, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	if err != nil {
 		return nil, nil, err
 	}
-	crt, err := x509.CreateCertificate(rand.Reader, &amp;template, &amp;template, &amp;privatekey.PublicKey, privatekey)
+	crt, err := x509.CreateCertificate(rand.Reader, &amp;template, &amp;template, &amp;privateKey.PublicKey, privateKey)
 	if err != nil {
 		return nil, nil, err
 	}
-	var certOut, keyOut bytes.Buffer
-	pem.Encode(&amp;certOut, &amp;pem.Block{Type: &quot;CERTIFICATE&quot;, Bytes: crt})
-	pem.Encode(&amp;keyOut, &amp;pem.Block{Type: &quot;RSA PRIVATE KEY&quot;, Bytes: x509.MarshalPKCS1PrivateKey(privatekey)})
-	return certOut.Bytes(), keyOut.Bytes(), nil
+	privKey, err := x509.MarshalECPrivateKey(privateKey)
+	if err != nil {
+		return nil, nil, err
+	}
+	return pem.EncodeToMemory(&amp;pem.Block{Type: &quot;CERTIFICATE&quot;, Bytes: crt}), pem.EncodeToMemory(&amp;pem.Block{Type: &quot;PRIVATE KEY&quot;, Bytes: privKey}), nil
 }
 
 func main() {
 	p := flag.Int(&quot;p&quot;, 8000, &quot;Listen on `port`&quot;)
-	q := flag.Bool(&quot;q&quot;, false, &quot;`quiet` mode&quot;)
-	r := flag.String(&quot;r&quot;, &quot;.&quot;, &quot;Document `root` path&quot;)
-	s := flag.String(&quot;s&quot;, &quot;&quot;, &quot;https://`your-domain.tld` if \&quot;localhost\&quot;, port can be other than 443&quot;)
+	q := flag.Bool(&quot;q&quot;, false, &quot;Enable `quiet` mode (no logs)&quot;)
+	r := flag.String(&quot;r&quot;, &quot;.&quot;, &quot;Document `root path`&quot;)
+	s := flag.String(&quot;s&quot;, &quot;&quot;, &quot;Use TLS, https://`your-domain.tld`, if \&quot;localhost\&quot; a self-signed certificate will be created and port can be other than 443&quot;)
 	flag.Parse()
 	srv := &amp;http.Server{Addr: fmt.Sprintf(&quot;:%d&quot;, *p), Handler: www(*r, *q)}
 	if *s == &quot;localhost&quot; {
